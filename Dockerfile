@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ruby curl bzip2
   && cd / && rm -rf /usr/src/rbx
 
 RUN apt-get install -y --no-install-recommends git ssh vim curl libcurl4-openssl-dev libpq-dev imagemagick libmagickwand-dev cmake libmysqlclient-dev
-RUN apt-get purge -y --auto-remove ruby ruby-dev bison llvm llvm-dev zlib1g-dev libbison-dev
+RUN apt-get purge -y --auto-remove ruby ruby-dev bison llvm llvm-dev libbison-dev
 RUN rm -rf /var/lib/apt/lists/*
 
 ENV GEM_HOME /usr/local/bundle
