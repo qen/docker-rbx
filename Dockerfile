@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ruby curl bzip2
   && SHELL=/bin/bash rake install clean \
   && cd / && rm -rf /usr/src/rbx
 
-RUN apt-get install -y --no-install-recommends git ssh vim curl
+RUN apt-get install -y --no-install-recommends git ssh vim curl nodejs
 #RUN apt-get install -y libcurl4-openssl-dev libpq-dev imagemagick libmagickwand-dev cmake libmysqlclient-dev
 
 RUN apt-get purge -y --auto-remove ruby ruby-dev bison llvm llvm-dev libbison-dev
