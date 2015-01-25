@@ -29,11 +29,13 @@ ENV BUNDLE_APP_CONFIG $GEM_HOME
 
 RUN echo "alias ll='ls -alh'" >> /etc/bash.bashrc
 RUN echo "export GEM_HOME=/usr/local/bundle" >> /etc/bash.bashrc
-RUN echo "export PATH=/usr/local/rubinius/bin:$GEM_HOME/bin:$PATH" >> /etc/bash.bashrc
+#RUN echo "export PATH=/usr/local/rubinius/bin:$GEM_HOME/bin:$PATH" >> /etc/bash.bashrc
 
 RUN useradd -u 1000 -s /bin/bash -m  app
 RUN mkdir -p /var/www
 RUN chown -R app:app /usr/local/bundle
 RUN chown -R app:app /var/www
+
+USER app
 
 CMD ["bash"]
